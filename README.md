@@ -47,24 +47,24 @@ Refer `.env.example` for structure.
 
 ### 1. Clone the repo
 
-```bash
+
 git clone https://github.com/nikhilshakya07/Book-review-API-Billeasy-assignment.git
 cd Book-review-API-Billeasy-assignment
 
-2. Install dependencies
+### 2. Install dependencies
 
 npm install
 
-3. Setup .env
+### 3. Setup .env
 Create a .env file and add your credentials (refer .env.example).
 
-4. Start the server
+### 4. Start the server
 bash
 npm start
 
 Server will run on: http://localhost:5000
 
-📮 API Endpoints
+### 📮 API Endpoints
 
 Auth Routes
 | Method | Endpoint    | Description       |
@@ -73,7 +73,7 @@ Auth Routes
 | POST   | /api/login  | User Login        |
 
 
-Book Routes
+### Book Routes
 | Method | Endpoint          | Description         |
 | ------ | ----------------- | ------------------- |
 | GET    | /api/books        | Get all books       |
@@ -82,7 +82,7 @@ Book Routes
 | GET    | /api/books/search | Search books        |
 
 
-Review Routes
+### Review Routes
 
 | Method | Endpoint                      | Description          |
 | ------ | ----------------------------- | -------------------- |
@@ -90,7 +90,7 @@ Review Routes
 | PUT    | /api/books/reviews/:id        | Update review (auth) |
 | DELETE | /api/books/reviews/delete/:id | Delete review (auth) |
 
-📸 Sample Book Document
+### 📸 Sample Book Document
 
 {
   "_id": "ObjectId",
@@ -102,7 +102,8 @@ Review Routes
   "createdBy": "UserObjectId"
 }
 
-🧑‍💻 Author
+### 🧑‍💻 Author
+
 Nikhil Shakya
 
 GitHub: https://github.com/nikhilshakya07
