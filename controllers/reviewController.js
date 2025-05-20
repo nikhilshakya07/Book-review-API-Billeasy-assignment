@@ -7,14 +7,14 @@ const addReview = async (req, res) => {
   try {
     const { rating, comment } = req.body;
     const bookId = req.params.id;
-    const userId = req.user.id;
+    const userId = req.user._id;
 
     // Check if review already exists by this user
     const existing = await Review.findOne({ book: bookId, user: userId });
     if (existing) {
       return res.status(400).json({ message: "You already reviewed this book." });
     }
-
+    //create and save review
     const review = new Review({
       book: bookId,
       user: userId,
@@ -23,6 +23,10 @@ const addReview = async (req, res) => {
     });
 
     await review.save();
+    await Book.findByIdAndUpdate(bookId, {
+      $push: { reviews: review._id },
+    });
+    
     res.status(201).json({ message: "Review added", review });
   } catch (err) {
     res.status(500).json({ message: "Error adding review", error: err.message });
