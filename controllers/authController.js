@@ -15,7 +15,7 @@ exports.signup = async (req, res) => {
     const user = await User.create({ username, password });
     const token = generateToken(user._id);
 
-    res.status(201).json({ token });
+    res.status(201).json({ message: "User created successfully", token, user: { id: user._id, username: user.username } });
   } catch (err) {
     res.status(500).json({ message: 'Signup failed', error: err.message });
   }
